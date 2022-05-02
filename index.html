@@ -10,14 +10,15 @@
 
 </head>
 <body>
+  <div id="afficherErreurs"></div>
     <div class="container">
         <h1>Quiz</h1>
         <main class="row">
-            <form class="col-10 ">
+            <form id="formulaire"class="col-10 ">
                 <fieldset class="bg-primary">
                <legend class="text-success ">Informations</legend>
                 <div class="form-group ">
-                  <label for="Prenom" class="textColor">Prénom</label>
+                  <label for="prenom" class="textColor">Prénom</label>
                   <input type="text" class="form-control" id="prenom" aria-describedby="prenom">
                 </div>
                 <div class="form-group">
@@ -39,11 +40,11 @@
                   </div>
                 <button type="submit" class="btn btn-success">Enregistrer</button>
             </fieldset>
-              </form>
+          </form>
         </main>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script> 
-</body>
+ <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+<script src="script.js"></script>
+  </body>
 </html>
