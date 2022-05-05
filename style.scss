@@ -1,20 +1,24 @@
 $primary: #613868;
 $secondary: #A13797;
-$success: #B2A8B4;
+$success: #e9dceb;
 
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 h1{
     text-align: center;
     font-size: 70px;
     margin-top: 35px;
+    color: $secondary;
+   
 }
 
 form{
     margin-top: 50px;
     margin: auto;
+
   
     legend{
         font-size: 50px;
+        color: $success;
     }
     fieldset{
         border: 5px solid $secondary;
@@ -31,6 +35,22 @@ form{
     font-size: 25px;
 
 }
+.zoneQuestion {
+    background: $secondary;
+    opacity: .90;
+    padding: 20px 30px 50px;
+    color: $success;
+    font-size: 20px;
+    border-radius: 15px;
+    border: 2px solid $success;
+}
+.choix{
+    background-color: $primary;
+    text-align: center;
+    border-radius: 15px;
+}
+
 body{
-    background-color: lavender;
+    background-color: rgb(120, 117, 120);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }

@@ -16,7 +16,7 @@
         <main class="row">
             <form id="formulaire"class="col-10 ">
                 <fieldset class="bg-primary">
-               <legend class="text-success ">Informations</legend>
+               <legend >Informations</legend>
                 <div class="form-group ">
                   <label for="prenom" class="textColor">Prénom</label>
                   <input type="text" class="form-control" id="prenom" aria-describedby="prenom">
@@ -41,6 +41,23 @@
                 <button type="submit" class="btn btn-success">Enregistrer</button>
             </fieldset>
           </form>
+          <form class="zoneQuiz col-10">
+            <fieldset class="bg-primary ">
+              <legend >Analyse et conception</legend>
+            <div class="divBlock zonePointage">
+                <div class="textPointage textColor">Pointage
+                    <span id="points"></span> sur <span id="total"></span>
+                </div>
+            </div>
+            <div class="divBlock zoneQuestion ">
+                <div class="flex-row"><span id="numero"></span><span id="question"></span></div>
+                <div class="choix" id="choix"></div>
+            </div>
+            <div class="divBlock zoneHorloge textColor">Temps restant <span id="minutes"></span><span id="deuxpoints">:</span><span
+                    id="secondes"></span></div>
+        </fieldset>
+        </form>
+          </div>
         </main>
     </div>
  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
