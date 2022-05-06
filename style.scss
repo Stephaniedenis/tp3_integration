@@ -7,8 +7,8 @@ h1{
     text-align: center;
     font-size: 70px;
     margin-top: 35px;
-    color: $secondary;
-   
+    color: $success;
+    text-shadow: 1px 1px 2px $secondary, 0 0 1em $primary, 0 0 0.2em $primary;   
 }
 
 form{
@@ -27,6 +27,7 @@ form{
         padding-right: 25px;
         padding-bottom: 50px;
         height: 80%;
+        box-shadow: 10px 5px 5px $success;
     }
   
 }
@@ -45,10 +46,10 @@ form{
     border: 2px solid $success;
 }
 .choix{
-    background-color: $primary;
     text-align: center;
-    border-radius: 15px;
+   
 }
+
 
 body{
     background-color: rgb(120, 117, 120);

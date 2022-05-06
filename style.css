@@ -10858,7 +10858,8 @@ h1 {
   text-align: center;
   font-size: 70px;
   margin-top: 35px;
-  color: #A13797;
+  color: #e9dceb;
+  text-shadow: 1px 1px 2px #A13797, 0 0 1em #613868, 0 0 0.2em #613868;
 }
 
 form {
@@ -10878,6 +10879,8 @@ form fieldset {
   padding-right: 25px;
   padding-bottom: 50px;
   height: 80%;
+  -webkit-box-shadow: 10px 5px 5px #e9dceb;
+          box-shadow: 10px 5px 5px #e9dceb;
 }
 
 .textColor {
@@ -10896,9 +10899,7 @@ form fieldset {
 }
 
 .choix {
-  background-color: #613868;
   text-align: center;
-  border-radius: 15px;
 }
 
 body {
