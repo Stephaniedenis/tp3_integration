@@ -1,6 +1,6 @@
 'use stric'
 let profil
-let estSoumis
+let estSoumis = false;
 
 const HTMLnumero = document.getElementById("numero");
 const HTMLpoints = document.getElementById("points");
@@ -12,38 +12,68 @@ const HTMLsecondes = document.getElementById("secondes");
 
 
 
+
+// $(function () {
+//     $(".contenu").hide()
+//     $(".titre").on("click", function () {
+//         $(".contenu").hide(1000)
+//         $(this).next().show(1000)
+//     })
+// })
+$(function () {
+    $(".contenu").hide()
+    $(".titre").click
+    $(".titre").on("click", function () {
+        $(".contenu").hide(1000)
+       
+        $( ".inner" ).after( "<p>Test</p>" );
+        $( "<p>Test</p>" ).insertAfter( ".inner" );
+       
+        $(this).parent().find(".contenu").show(1000)
+        $(this).append(`<p>PHILIPPE</p>`)
+        
+    })
+})
+
+
+
 $("#formulaire").validate(
     {
         rules:{
-            prenom:
-            {required: true,
-            maxlength: 100,
-            alphanumeric:true
-        },
-        date:{
-            required: true,
-            datePlusPetite: true,
-       
-
-        }
-        },
-        messages:{
-            prenom: {
-            required:"Le prénom est obligatoire",
-            maxlength:"Le nom ne peut pas être plus long que ..."
-        },
-        date:{
-            required:"La date est requise",
-
+            prenom:{
+                required:true,
+                maxlength: 100,
+                alphanumeric:true
+            },
+            nom:{
+                required:true,
+                maxlength: 100,
+                alphanumeric:true
+            },
+            date:{
+                required:true,
+                datePlusPetite: true
             }
         },
-        submitHandler:function(){
-            //aller chercher les valeur du formulaire
-            //SauvegarderDonnes()
-           // CacherFormulaire()
-           //profil = ObtenirProfil()
-            CreerQuiz()
+        messages:{
+            prenom:{
+                required:"Le prénom est obligatoire",
+                maxlength : "Le prénpm ne peut pas être plus long que..."
+            },
+            nom:{
+                required:"Le prénom est obligatoire",
+                maxlength : "Le prénpm ne peut pas être plus long que..."
+            },
+            date:{
+                required:"Le date est requise"
+            }
         },
+        submitHandler: function () {
+            
+            //profil = ObtenirProfil()
+            //CacherFormulaire()
+            CreerQuiz() 
+        }, 
         showErrors: function (errorMap, errorList) {
             if (estSoumis) {
                 const ul = $("<ul></ul>");
@@ -64,27 +94,28 @@ $("#formulaire").validate(
 
 
 function CreerQuiz(){
-    
+  
 }
 
+// https://www.pierrefay.fr/blog/jquery-validate-formulaire-validation-tutoriel.html
 jQuery.validator.addMethod(
     "alphanumeric",
     function (value, element) {
-    return this.optional(element) || /^[\w.]+$/i.test(value);
+      return this.optional(element) || /^[\w.]+$/i.test(value);
     },
-    "Lettre,"
-)
-    
+    "Letters, numbers, and underscores only please"
+);
 
 $.validator.addMethod(
     "datePlusPetite",
-        function (value, element) {
-
-      const dateActuelle = new Date();return this.optional(element) || dateActuelle >= new Date(value);
+    function (value, element) {
+      const dateActuelle = new Date();
+      return this.optional(element) || dateActuelle >= new Date(value);
     },
     "La date de naissance doit être inférieure à la date d'aujourd'hui"
+);
 
-  );
+
 var points = 0;
 var numero = 0;
 var total = 0; 
