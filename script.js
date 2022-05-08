@@ -1,3 +1,4 @@
+'use stric'
 let profil
 let estSoumis
 
@@ -84,7 +85,7 @@ $.validator.addMethod(
     "La date de naissance doit être inférieure à la date d'aujourd'hui"
 
   );
-  var points = 0;
+var points = 0;
 var numero = 0;
 var total = 0; 
 var temps = 0; // temps en secondes
