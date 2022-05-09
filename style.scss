@@ -1,6 +1,7 @@
-$primary: lightgrey;
-$secondary: lightblue;
-$success: black;
+$light: lightgrey;
+$primary: lightblue;
+$secondary: grey;
+$success: gold;
 
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 h1{
@@ -11,47 +12,54 @@ h1{
     text-shadow: 1px 1px 2px $secondary, 0 0 1em $primary, 0 0 0.2em $primary;   
 }
 
+.shadow {
+    box-shadow: 8px 4px 8px 4px black;
+}
+
 form{
-    margin-top: 50px;
     margin: auto;
 
-  
     legend{
-        font-size: 50px;
-        color: $success;
+        font-size: 2.1em;
     }
     fieldset{
-        border: 5px solid $secondary;
-        border-radius: 20px;
-        padding-left: 25px;
-        padding-right: 25px;
-        padding-bottom: 50px;
-        height: 80%;
-        box-shadow: 10px 5px 5px $success;
+        @extend .bg-light, .shadow;
+        border: 0.3em solid $secondary;
+        border-radius: 1em;
+        padding: 0em 2em 2em 2em;
     }
-  
 }
-.textColor{
-    color: $success;
-    font-size: 25px;
 
-}
 .zoneQuestion {
-    background: $secondary;
-    opacity: .90;
+    @extend .shadow;
+    background: $primary;
     padding: 20px 30px 50px;
-    color: $success;
-    font-size: 20px;
-    border-radius: 15px;
-    border: 2px solid $success;
+    border: 2px solid $secondary;
 }
 .choix{
     text-align: center;
-   
 }
 
+.error {
+    @extend .font-italic;
+    font-size: medium;
+    color:red;
+}
+
+#afficherErreurs {
+    @extend .error
+}
+
+form {
+    display:none;
+}
+
+.show {
+    display:block;
+}
 
 body{
-    
+    font-size: 1.3rem;
+    background-color: whitesmoke;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
