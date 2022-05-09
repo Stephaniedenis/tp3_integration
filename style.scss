@@ -1,6 +1,6 @@
-$primary: red;
-$secondary: grey;
-$success: white;
+$primary: lightgrey;
+$secondary: lightblue;
+$success: black;
 
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 h1{
@@ -52,6 +52,6 @@ form{
 
 
 body{
-    background-color: black;
+    
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
