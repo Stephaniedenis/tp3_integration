@@ -469,3 +469,8 @@ function reveal() {
     }
 ];
 
+$( function() {
+    $( "#accordion" ).accordion();
+    
+
+  } );

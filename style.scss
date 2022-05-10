@@ -63,3 +63,19 @@ body{
     background-color: whitesmoke;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+.accordion{
+    display: none;
+    @extend .bg-light, .shadow;
+    border: 0.3em solid $secondary;
+    border-radius: 1em;
+    padding: 0em 2em 2em 2em;
+    h3{
+        @extend .bg-secondary, .shadow
+    }
+    div{
+        @extend .bg-primary;
+    }
+
+
+}
