@@ -10918,4 +10918,10 @@ body {
   border-radius: 1em;
   padding: 0em 2em 2em 2em;
 }
+
+.barProgress {
+  display: none;
+  border: 0.5em solid lightblue;
+  background-color: grey;
+}
 /*# sourceMappingURL=style.css.map */

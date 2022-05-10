@@ -474,3 +474,8 @@ $( function() {
     
 
   } );
+  $( function() {
+    $( "#progressbar" ).progressbar({
+      value: 10
+    });
+  } );
