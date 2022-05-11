@@ -2,7 +2,7 @@ $light: lightgrey;
 $primary: lightblue;
 $secondary: grey;
 $success: gold;
-
+$info: green;
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 h1{
     text-align: center;
@@ -81,4 +81,9 @@ body{
     display: none;
     border: 0.5em solid $primary;
     background-color: $secondary;
+}
+.modal{
+    display: block;
+   
+    
 }
