@@ -147,7 +147,7 @@ function lancerFormulaire() {
 
 function lancerQuiz() {
     // addMessage(`Bonjour ${JSON.stringify(profil)}`);
-    startQuiz();    
+    startQuiz();   
 }
 
 function lancerSommaire() {
@@ -204,6 +204,7 @@ function startQuiz() {
     HTMLtotal.innerHTML = total;
     loadNextQuestion();
 }
+
 
 function stopClock() {
     clearInterval(horloge);
@@ -358,115 +359,7 @@ function reveal() {
         ],
         "reponse" : 4
     },
-    {
-        "question" : "Dans quel axe de la phase conception que nous découpons les données en entités-relations",
-        "choix" : [
-            "Travail",
-            "Fonctions",
-            "Information",
-            "Architecture de l'intreface",
-            "Aucune de ces réponses"
-        ],
-        "reponse" : 3
-    },
-    {
-        "question" : "Dans quel phase est surtout utilisée le diagramme de cas d'utilisation",
-        "choix" : [
-            "Phase Analyse",
-            "Phase Conception",
-            "Phase Réalisation",
-            "Phase déploiement",
-            "Aucune des ces réponses"
-        ],
-        "reponse" : 1
-    },
-    {
-        "question"  :"Qu'allez-vous trouver dans le diagramme de cas d'utilisation d'une application Web",
-        "choix" : [
-            "object d'information",
-            "logiciel à utiliser",
-            "les fonctions de l'application",
-            "toutes ces réponses"
-        ],
-        "reponse" : 3
-    },
-    {
-        "question" : "Quel langage sert de squelette de l'application sur un fureteur?",
-        "choix" : [
-            "HTML",
-            "C#",
-            "CSS",
-            "Javascript",
-            "Aucune de ces réponses"
-        ],
-        "reponse" : 1
-    },
-    {
-        "question" : "Quel démarche préconise UML?",
-        "choix" : [
-            "En cascade",
-            "Agile",
-            "Démarche à petits pas",
-            "Waterfall",
-            "Aucune de ces réponses"
-        ],
-        "reponse" : 5
-    },
-    {
-        "question" : "Qui suis-je ? un ensemble organisé de ressources (matériels, logiciels, applications) qui permet de collecter, regrouper, classifier, traiter et diffuser de l'information dans un environnement donné",
-        "choix": [
-            "Système d'information",
-            "Système informatique",
-            "Le Web",
-            "Un processus",
-            "Aucune de ces réponses"
-        ],
-        "reponse" : 2
-    },
-    {
-        "question" : "Quelle rôle dans la conception des sites Web a comme fonction de nous permettre de mesurer le succès notre site Web ?",
-        "choix" : [
-            "Le devOps",
-            "L'assurance qualité",
-            "Le représentant d'affaires",
-            "Le designer Web",
-            "Aucune de ces réponses"
-        ],
-        "reponse" : 3
-    },
-    {
-        "question" : "Quel outil sur le Web nous permet d'être connu par nos clients ?Immersive Reader",
-        "choix" : [
-            "L'hébergement",
-            "L'infonuagique",
-            "Les moteurs de recherche (Google, Bing, ...)",
-            "Les systèmes de nom de domaines (DNS)",
-            "Toutes ces réponses"
-        ],
-        "reponse":3
-    },
-    {
-        "question":"Quel est la composante utilisée pour afficher une page en HTML sur l’ordinateur d’un usager ?Immersive Reader",
-        "choix" : [
-            "Une base de données",
-            "Un fureteur",
-            "Un serveur",
-            "Le langage Javascript",
-            "Aucune de ces réponses"    
-        ],
-        "reponse" : 2
-    },
-    {
-        "question" : "Quel modèle se retrouve entre le modèle mental de l’utilisateur et le modèle de l’implantation de votre application ?Immersive Reader",
-        "choix" : [
-            "Le modèle de cas d'utilisation",
-            "Le modèle d'information de la base de donnée",
-            "Le modèle de l'interface",
-            "Le fureteur",
-            "Aucune de ces réponses"
-        ],
-        "reponse" : 3
-    }
+  
 ];
 
 $( function() {
