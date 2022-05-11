@@ -6301,7 +6301,7 @@ a.close.disabled {
   opacity: 1;
 }
 
-.toast.hide {
+.toast.hide, form.toast, .toast.progressbar {
   display: none;
 }
 
@@ -10880,7 +10880,7 @@ form legend {
 form fieldset {
   border: 0.3em solid grey;
   border-radius: 1em;
-  padding: 0em 2em 2em 2em;
+  padding: 0em 1.5em 1.5em 1.5em;
 }
 
 .zoneQuestion {
@@ -10898,7 +10898,7 @@ form fieldset {
   color: red;
 }
 
-form {
+.hide, form, .progressbar {
   display: none;
 }
 
@@ -10914,22 +10914,76 @@ body {
 
 .accordion {
   display: block;
-  border: 0.3em solid grey;
-  border-radius: 1em;
-  padding: 0em 2em 2em 2em;
 }
 
-.barProgress {
-  display: none;
+.progressbar {
   border: 0.5em solid lightblue;
   background-color: grey;
 }
 
-.modal {
+#modal {
   display: none;
 }
 
-.sommaire {
+span {
+  word-wrap: break-word;
+  margin: 5px;
+  line-height: 140%;
+}
+
+.divBlock {
   display: block;
+  padding: 1em;
+}
+
+.flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.choix {
+  background-color: aliceblue;
+  border-radius: 15px 0px 15px 0px;
+  -webkit-box-shadow: mediumblue 3px 1.5px;
+          box-shadow: mediumblue 3px 1.5px;
+  margin: 17px 0px;
+  padding: 20px 50px;
+}
+
+.good {
+  background-color: greenyellow;
+  -webkit-box-shadow: green 3px 1.5px;
+          box-shadow: green 3px 1.5px;
+}
+
+.bad {
+  background-color: pink;
+  -webkit-box-shadow: red 3px 1.5px;
+          box-shadow: red 3px 1.5px;
+}
+
+.light {
+  -webkit-transition: text-shadow 0.5s, -webkit-box-shadow 0.5s;
+  transition: text-shadow 0.5s, -webkit-box-shadow 0.5s;
+  transition: text-shadow 0.5s, box-shadow 0.5s;
+  transition: text-shadow 0.5s, box-shadow 0.5s, -webkit-box-shadow 0.5s;
+}
+
+.light:hover::before {
+  -webkit-box-shadow: 0 0 15px blue;
+          box-shadow: 0 0 15px blue;
+}
+
+.light:hover {
+  -webkit-box-shadow: 2px 2px 2px 2px darkblue;
+          box-shadow: 2px 2px 2px 2px darkblue;
+  text-shadow: 0 0 1px darkslategrey;
+}
+
+.textPointage {
+  display: block;
+  float: right;
+  margin-top: -0.7em;
 }
 /*# sourceMappingURL=style.css.map */

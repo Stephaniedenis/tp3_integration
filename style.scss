@@ -26,7 +26,7 @@ form{
         @extend .bg-light, .shadow;
         border: 0.3em solid $secondary;
         border-radius: 1em;
-        padding: 0em 2em 2em 2em;
+        padding: 0em 1.5em 1.5em 1.5em;
     }
 }
 
@@ -50,12 +50,16 @@ form{
     @extend .error
 }
 
-form {
+.hide {
     display:none;
 }
 
 .show {
     display:block;
+}
+
+form {
+    @extend .hide;
 }
 
 body{
@@ -67,9 +71,6 @@ body{
 .accordion{
     display: block;
     @extend .bg-light, .shadow;
-    border: 0.3em solid $secondary;
-    border-radius: 1em;
-    padding: 0em 2em 2em 2em;
     h3{
         @extend .bg-secondary, .shadow
     }
@@ -77,16 +78,65 @@ body{
         @extend .bg-primary;
     }
 }
-.barProgress{
-    display: none;
+.progressbar{
+    @extend .hide;
     border: 0.5em solid $primary;
     background-color: $secondary;
 }
-.modal{
+#modal{
     display: none;
-   
-    
 }
-.sommaire{
+// QUIZ STUFF : DEBUT
+
+span {
+    word-wrap: break-word;
+    margin: 5px;
+    line-height: 140%;
+}
+
+.divBlock {
     display: block;
+    padding: 1em;
 }
+
+.flex-row {
+    display:flex;
+}
+
+.choix {
+    background-color: aliceblue;
+    border-radius: 15px 0px 15px 0px;
+    box-shadow: mediumblue 3px 1.5px;
+    margin: 17px 0px;
+    padding: 20px 50px;
+}
+
+.good {
+    background-color: greenyellow;
+    box-shadow: green 3px 1.5px;
+}
+
+.bad {
+    background-color: pink;
+    box-shadow: red 3px 1.5px;
+}
+
+.light {
+    transition: text-shadow 0.5s, box-shadow 0.5s;
+}
+
+.light:hover::before {
+    box-shadow: 0 0 15px blue;
+}
+  
+.light:hover {
+    box-shadow: 2px 2px 2px 2px darkblue;
+    text-shadow: 0 0 1px darkslategrey;
+}
+
+.textPointage {
+    display: block;
+    float: right;
+    margin-top: -0.7em;
+}
+// QUIZ STUFF : FIN

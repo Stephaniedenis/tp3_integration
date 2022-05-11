@@ -20,22 +20,23 @@
   <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.css"/>
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.js"></script> -->
 
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
-  <link rel="stylesheet" href="style.css" defer>
+  <link rel="stylesheet" href="style.css">
 
   <title>Quiz</title>
 
 </head>
 
 <body>
-  <div class="container">
+  <div id="progressbar"></div>
+  <div class="">
     <h1>Quiz</h1>
     <div id="afficherErreurs"></div>
-    <main class="col">
+    <main>
       <form id="formulaire">
         <fieldset class="">
           <legend>Informations</legend>
@@ -51,202 +52,87 @@
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="dateNaissance" class="textColor">Date de Naissance</label>
+              <label for="date" class="textColor">Date de Naissance</label>
               <input type="date" class="form-control" name="date" id="date">
             </div>
             <div class="form-group col-md-6">
               <label for="occupation" class="textColor">Occupation</label>
               <select class="form-control" name="occupation" id="occupation">
                 <option value="" selected>Choisir une occupation...</option>
-                <option value="etudiant">Étudiant</a>
-                <option value="professeur">Professeur</a>
+                <option value="Étudiant">Étudiant.e</option>
+                <option value="Professeur">Professeur.e</option>
               </select>
             </div>
           </div>
 
           <input class="btn btn-primary" type="submit" value="Enregistrer">
         </fieldset>
-        <div id="progressbar" class="barProgress"></div>
       </form>
       <form id="quiz" class="zoneQuiz">
         <fieldset class="">
           <legend>Analyse et conception</legend>
-          <div class="divBlock zonePointage">
+          <div class="divBlock">
             <div class="textPointage textColor">Pointage
               <span id="points"></span> sur <span id="total"></span>
             </div>
           </div>
-          <div class="divBlock zoneQuestion ">
+          <div class="divBlock zoneQuestion">
             <div class="flex-row"><span id="numero"></span><span id="question"></span></div>
             <div class="choix" id="choix"></div>
           </div>
-          <div class="divBlock zoneHorloge textColor">Temps restant <span id="minutes"></span><span
-              id="deuxpoints">:</span><span id="secondes"></span></div>
         </fieldset>
       </form>
-  </div>
-  <div class="modal" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header bg-light">
-          <p  class="modal-title h2">Résultat du Quiz</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="alert alert-danger" role="alert">
-            Vous avez échoué!Meilleure chance la prochaine fois!
+      <div id="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header bg-light">
+              <p class="modal-title h2">Résultat du Quiz</p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+              <div class="alert alert-danger" role="alert">
+                Vous avez échoué!Meilleure chance la prochaine fois!
+              </div>
+              <div class="alert alert-info" role="alert">
+                Bravo! Bon travail!
+              </div>
+              <div class="alert alert-warning" role="alert">
+                Vous avez réussit!
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
           </div>
-          <div class="alert alert-info" role="alert">
-            Bravo! Bon travail!
-          </div>
-          <div class="alert alert-warning" role="alert">
-            Vous avez réussit!
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
-    </div>
-  </div>
-  <form class=" sommaire">
-    <fieldset class="">
-      <legend>Résultats</legend>
-      <div class="form-row">
-        <div class="form-group col-md-4">
-          <p>Prénom:</p>
-          <p>Nom:</p>
-          <p>Âge:</p>
-          <p>Statut:</p> 
-        </div>
-        <div class="col-md-4">
-          <div id="accordion" class="accordion container">
-            <h3>Question 1</h3>
-            <div >
-              <p>
-              Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-              ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-              amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-              odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-              </p>
+      <form id="sommaire">
+        <fieldset class="">
+          <legend>Résultats</legend>
+          <div class="row">
+            <div id="sommaire1" class="col-md-3">
             </div>
-            <h3>Question 2</h3>
-            <div >
-              <p>
-              Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-              purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-              velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-              suscipit faucibus urna.
-              </p>
+            <div id="sommaire2" class="col-md-5">
+              <div id="accordion" class="accordion">
+              </div>
             </div>
-            <h3>Question 3</h3>
-            <div >
-              <p>
-              Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-              Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-              ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-              lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
-              </p>
-              <ul>
-                <li>List item one</li>
-                <li>List item two</li>
-                <li>List item three</li>
-              </ul>
-            </div>
-            <h3>Question 4</h3>
-            <div>
-              <p>
-              Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-              et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-              faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-              mauris vel est.
-              </p>
-              <p>
-              Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-              Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-              inceptos himenaeos.
-              </p>
-            </div>
-            <h3>Question 5</h3>
-            <div>
-              <p>
-              Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-              et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-              faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-              mauris vel est.
-              </p>
-              <p>
-              Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-              Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-              inceptos himenaeos.
-              </p>
-            </div>
-            <h3>Question 6</h3>
-            <div>
-              <p>
-              Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-              et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-              faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-              mauris vel est.
-              </p>
-              <p>
-              Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-              Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-              inceptos himenaeos.
-              </p>
-            </div>
-            <h3>Question 7</h3>
-            <div>
-              <p>
-              Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-              et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-              faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-              mauris vel est.
-              </p>
-              <p>
-              Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-              Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-              inceptos himenaeos.
-              </p>
-            </div>
-            <h3>Question 8</h3>
-            <div>
-              <p>
-              Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-              et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-              faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-              mauris vel est.
-              </p>
-              <p>
-              Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-              Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-              inceptos himenaeos.
-              </p>
+            <div id="sommaire3" class="md-col-4">
+              <p>TEST</p>
             </div>
           </div>
-         
-        </div>
-      </div>
-      <div class="row">
-        
-       
-        
-        </div>
-      </div>
-
-      <input class="btn btn-primary" type="submit" value="Enregistrer">
-    </fieldset>
-    <div id="progressbar" class="barProgress"></div>
-  </form>
-  </main>
+          <input class="btn btn-primary" type="submit" value="Enregistrer">
+        </fieldset>
+      </form>
+    </main>
   </div>
   <!-- <script src="https://code.jquery.com/jquery-3.6.0.js"
     integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
     -->
+  <script src="quiz.js" defer></script>
   <script src="script.js" defer></script>
 </body>
 
