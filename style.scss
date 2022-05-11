@@ -65,7 +65,7 @@ body{
 }
 
 .accordion{
-    display: none;
+    display: block;
     @extend .bg-light, .shadow;
     border: 0.3em solid $secondary;
     border-radius: 1em;
@@ -83,7 +83,10 @@ body{
     background-color: $secondary;
 }
 .modal{
-    display: block;
+    display: none;
    
     
+}
+.sommaire{
+    display: block;
 }

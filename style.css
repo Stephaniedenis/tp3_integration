@@ -10913,7 +10913,7 @@ body {
 }
 
 .accordion {
-  display: none;
+  display: block;
   border: 0.3em solid grey;
   border-radius: 1em;
   padding: 0em 2em 2em 2em;
@@ -10926,6 +10926,10 @@ body {
 }
 
 .modal {
+  display: none;
+}
+
+.sommaire {
   display: block;
 }
 /*# sourceMappingURL=style.css.map */
