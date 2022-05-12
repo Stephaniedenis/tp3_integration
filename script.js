@@ -169,5 +169,10 @@ function remplirSommaireAccordeon() {
             `);
     }
     $("#accordion").accordion();
+
+    $(function() {
+        $("#table_id").dataTable();
+        });
+
 }
 
