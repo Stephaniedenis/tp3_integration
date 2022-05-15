@@ -140,6 +140,7 @@ function lancerSommaire() {
     // Remplir Écran Sommaire avec les informations reçues.
     remplirSommaireProfil();
     remplirSommaireAccordeon();
+    remplirSommaireDatatable();
 }
 
 function clearMessage() {
@@ -165,6 +166,8 @@ function remplirSommaireAccordeon() {
             <div>
             <p>${quiz.tentative.questionnaire[i].question}</p>
             <p>Vous avez répondu : ${quiz.tentative.questionnaire[i].choix[quiz.tentative.questionnaire[i].reponseChoisie-1]}</p>
+            Choix de réponses:
+            <li>${quiz.tentative.questionnaire[i].choix}</li> 
             </div>
             `);
     }
@@ -173,8 +176,21 @@ function remplirSommaireAccordeon() {
   
 
 }
-$(document).ready(function () {
-    $('#dtBasicExample').DataTable();
-    $('.dataTables_length').addClass('bs-select');
-    });
+function remplirSommaireDatatable(){
+    for(i=0;i<quiz.total;i++){
+        $("#datatable").append(
+           `<tr>
+           <td>Question ${i+1}</td>
+           <th>${quiz.tentative.questionnaire[i].question}</th>
+           <th>${quiz.tentative.questionnaire[i].choix[quiz.tentative.questionnaire[i].reponseChoisie-1]}</th>
+           </tr>
+           ` 
+        )
+    }
+    $(document).ready(function () {
+        $('#datatable').DataTable();
+        $('.dataTables_length').addClass('bs-select');
+        });
+}
+
 
