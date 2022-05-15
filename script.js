@@ -64,11 +64,11 @@ function lancerFormulaire() {
             messages:{
                 prenom:{
                     required:"Le prénom est obligatoire",
-                    maxlength : "Le prénpm ne peut pas être plus long que..."
+                    maxlength : "Le prénom ne peut pas être plus long que..."
                 },
                 nom:{
                     required:"Le prénom est obligatoire",
-                    maxlength : "Le prénpm ne peut pas être plus long que..."
+                    maxlength : "Le prénom ne peut pas être plus long que..."
                 },
                 date:{
                     required:"Le date est requise"
@@ -178,19 +178,19 @@ function remplirSommaireAccordeon() {
 }
 function remplirSommaireDatatable(){
     for(i=0;i<quiz.total;i++){
-        $("#datatable").append(
+        $("#example").append(
            `<tr>
            <td>Question ${i+1}</td>
            <th>${quiz.tentative.questionnaire[i].question}</th>
            <th>${quiz.tentative.questionnaire[i].choix[quiz.tentative.questionnaire[i].reponseChoisie-1]}</th>
            </tr>
            ` 
-        )
+        );
     }
     $(document).ready(function () {
-        $('#datatable').DataTable();
-        $('.dataTables_length').addClass('bs-select');
-        });
+        $('#example').DataTable();
+    });
+    
 }
 
 
