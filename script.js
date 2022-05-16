@@ -7,7 +7,7 @@ let profil = {
 };
 let estSoumis = false;
 let etat = "chargement";
-let startingState = "quiz";
+let startingState = "formulaire";
 let quiz;
 
 jQuery(function() {
@@ -17,14 +17,25 @@ jQuery(function() {
 
 function changeEtat(nom) {
 
+    if(etat!="chargement") 
+    {
+        $('#'+etat).fadeOut(1000);
+        $('#'+nom).delay(1000).fadeIn(1000);
+    }
+    else
+    {
+        $('#'+nom).slideDown("slow");
+    }
+
     etat = nom; 
 
     // Affichage du form
-    $('form').each(function() {
-        $(this).removeClass('show');
-    });
-    $('#'+nom).addClass('show');
+    // $('form').each(function() {
+    //     $(this).removeClass('show');
+    // });
+    // $('#'+etat).addClass('show');
     // addMessage(`${etat}`);
+    // .addClass('show');
 
     switch (etat) {
         case "formulaire":
@@ -85,7 +96,7 @@ function lancerFormulaire() {
                     "date" : date.value,
                     "occupation" : occupation.value
                 };
-                changeEtat("sommaire");
+                changeEtat("quiz");
             }, 
             showErrors: function (errorMap, errorList) {
                 clearMessage();

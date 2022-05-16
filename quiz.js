@@ -105,12 +105,18 @@ class Quiz {
         this.HTMLtotal.text(this.total);
         this.updatePointage();
         this.loadNextQuestion();
+        this.HTMLprogressbar.delay(2000).fadeIn(2000);
     }
     updateProgressBar() {
-        this.HTMLprogressbar.progressbar({"value":this.numero,"max":this.total}).addClass('show');
+        this.HTMLprogressbar.progressbar({"value":this.numero,"max":this.total});
+        // .addClass('show');
     }
     updatePointage() {
         this.HTMLpointage.text(this.points);
+    }
+    animationQuestion() {
+        $('#quiz').slideUp(1000).delay(500).slideDown(1000);
+        setTimeout(function () {self.loadNextQuestion();},1000);
     }
     loadNextQuestion() {
         this.numero++;
@@ -136,7 +142,7 @@ class Quiz {
             }
             this.clickable = true;
         } else {
-            alert("FIN DU QUIZ");
+            // alert("FIN DU QUIZ");
             callback();
         }
     }
@@ -150,7 +156,7 @@ class Quiz {
             self.clickable = false;
             self.tentative.questionnaire[self.numero].reponseChoisie = parseInt(e.target.id);
         } else {
-            self.loadNextQuestion();
+            self.animationQuestion();
         }
     }
     mauvaisChoix(e) {
@@ -160,7 +166,7 @@ class Quiz {
             self.clickable = false;
             self.tentative.questionnaire[self.numero].reponseChoisie = parseInt(e.target.id);
         } else {
-            self.loadNextQuestion();
+            self.animationQuestion();
         }
     }
 
