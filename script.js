@@ -180,7 +180,7 @@ function remplirSommaireAccordeon() {
             <p>${quiz.tentative.questionnaire[i].question}</p>
             <p>Vous avez répondu : ${quiz.tentative.questionnaire[i].choix[quiz.tentative.questionnaire[i].reponseChoisie-1]}</p>
             Choix de réponses:
-            <li>${quiz.tentative.questionnaire[i].choix}</li> 
+            <ul><li>${quiz.tentative.questionnaire[i].choix.join('</li><li>')}</li></ul> 
             </div>
             `);
     }
@@ -191,11 +191,12 @@ function remplirSommaireAccordeon() {
 }
 function remplirSommaireDatatable(){
     for(i=0;i<quiz.total;i++){
+        let message = (quiz.tentative.questionnaire[i].reponse == quiz.tentative.questionnaire[i].reponseChoisie) ? "BON" : "MAUVAIS";
         $("#dataTable").append(
            `<tr>
-           <td>Question ${i+1}</td>
-           <th>${quiz.tentative.questionnaire[i].question}</th>
-           <th>${quiz.tentative.questionnaire[i].choix[quiz.tentative.questionnaire[i].reponseChoisie-1]}</th>
+           <td>${i+1}</td>
+           <td>${quiz.tentative.questionnaire[i].question}</td>
+           <td>${quiz.tentative.questionnaire[i].choix[quiz.tentative.questionnaire[i].reponseChoisie-1]}<br><i>${message}</i></td>
            </tr>
            ` 
            );
