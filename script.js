@@ -39,6 +39,7 @@ function changeEtat(nom) {
     }
 }
 
+
 function lancerFormulaire() {
     $("#formulaire").validate(
         {
@@ -122,6 +123,7 @@ function lancerFormulaire() {
 function lancerQuiz() {
     quiz = new Quiz($('#progressbar'),$('#points'),$('#total'),$('#numero'),$('#question'),$('#choix')); 
     quiz.startQuiz(lancerModal);
+
 }
 
 function lancerModal() {
@@ -178,18 +180,19 @@ function remplirSommaireAccordeon() {
 }
 function remplirSommaireDatatable(){
     for(i=0;i<quiz.total;i++){
-        $("#example").append(
+        $("#dataTable").append(
            `<tr>
            <td>Question ${i+1}</td>
            <th>${quiz.tentative.questionnaire[i].question}</th>
            <th>${quiz.tentative.questionnaire[i].choix[quiz.tentative.questionnaire[i].reponseChoisie-1]}</th>
            </tr>
            ` 
-        );
+           );
+          
     }
-    $(document).ready(function () {
-        $('#example').DataTable();
-    });
+    $( "#dataTable tHeader" ).on( "click", "tr", function() {
+        console.log( $( this ).text() );
+      });
     
 }
 
