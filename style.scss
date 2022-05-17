@@ -141,4 +141,10 @@ span {
 }
 
 
+.datatable{
+    @extend .bg-light, .shadow;
+    tHead{
+    background-color: $light;
+}
+}
 // QUIZ STUFF : FIN
