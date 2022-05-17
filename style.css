@@ -7234,15 +7234,17 @@ button.bg-danger:focus {
   background-color: #bd2130 !important;
 }
 
-.bg-light, form fieldset, .accordion {
+.bg-light, form fieldset, .accordion, .datatable {
   background-color: lightgrey !important;
 }
 
-a.bg-light:hover, a.accordion:hover, a.bg-light:focus, a.accordion:focus,
+a.bg-light:hover, a.accordion:hover, a.datatable:hover, a.bg-light:focus, a.accordion:focus, a.datatable:focus,
 button.bg-light:hover,
 button.accordion:hover,
+button.datatable:hover,
 button.bg-light:focus,
-button.accordion:focus {
+button.accordion:focus,
+button.datatable:focus {
   background-color: #bababa !important;
 }
 
@@ -8645,7 +8647,7 @@ button.bg-dark:focus {
           box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
 
-.shadow, form fieldset, .zoneQuestion, .accordion, .accordion h3 {
+.shadow, form fieldset, .zoneQuestion, .accordion, .accordion h3, .datatable {
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
@@ -10864,7 +10866,7 @@ h1 {
   text-shadow: 1px 1px 2px grey, 0 0 1em lightblue, 0 0 0.2em lightblue;
 }
 
-.shadow, form fieldset, .zoneQuestion, .accordion, .accordion h3 {
+.shadow, form fieldset, .zoneQuestion, .accordion, .accordion h3, .datatable {
   -webkit-box-shadow: 8px 4px 8px 4px black;
           box-shadow: 8px 4px 8px 4px black;
 }
@@ -10985,5 +10987,9 @@ span {
   display: block;
   float: right;
   margin-top: -0.7em;
+}
+
+.datatable tHead {
+  background-color: lightgrey;
 }
 /*# sourceMappingURL=style.css.map */
