@@ -105,23 +105,23 @@ class Quiz {
         this.HTMLtotal.text(this.total);
         this.updatePointage();
         this.loadNextQuestion();
-        this.HTMLprogressbar.delay(2000).fadeIn(2000);
+        this.HTMLprogressbar.slideDown(2000);
     }
     updateProgressBar() {
-        this.HTMLprogressbar.progressbar({"value":this.numero,"max":this.total});
-        // .addClass('show');
+        setTimeout(function () {self.HTMLprogressbar.progressbar({"value":this.numero,"max":this.total});},500);        
     }
     updatePointage() {
         this.HTMLpointage.text(this.points);
     }
     animationQuestion() {
-        $('#quiz').slideUp(1000).delay(500).slideDown(1000);
+        $('#quiz').slideUp(1000);
         setTimeout(function () {self.loadNextQuestion();},1000);
     }
     loadNextQuestion() {
         this.numero++;
         this.updateProgressBar();
         if (this.numero<this.total) {
+            $('#quiz').slideDown(1000);
             this.HTMLnumero.text((this.numero+1)+".");
             this.HTMLquestion.text(this.tentative.questionnaire[this.numero].question);
     
@@ -140,9 +140,9 @@ class Quiz {
                 }
                 this.HTMLchoix.append(div);
             }
-            this.clickable = true;
+            setTimeout(function () {self.clickable = true;},1000); 
         } else {
-            // alert("FIN DU QUIZ");
+            this.HTMLprogressbar.slideUp(2000);            
             callback();
         }
     }
@@ -155,7 +155,6 @@ class Quiz {
             self.updatePointage();
             self.clickable = false;
             self.tentative.questionnaire[self.numero].reponseChoisie = parseInt(e.target.id);
-        } else {
             self.animationQuestion();
         }
     }
@@ -165,7 +164,6 @@ class Quiz {
             self.reveal();
             self.clickable = false;
             self.tentative.questionnaire[self.numero].reponseChoisie = parseInt(e.target.id);
-        } else {
             self.animationQuestion();
         }
     }
