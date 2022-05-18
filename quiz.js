@@ -102,13 +102,14 @@ class Quiz {
         this.points = 0;
         this.tentative = JSON.parse(JSONdata);
         this.total = this.tentative.questionnaire.length;
+        this.pourcentage = 0;
         this.HTMLtotal.text(this.total);
         this.updatePointage();
         this.loadNextQuestion();
-        this.HTMLprogressbar.slideDown(2000);
+        this.HTMLprogressbar.slideDown(1000);
     }
     updateProgressBar() {
-        setTimeout(function () {self.HTMLprogressbar.progressbar({"value":this.numero,"max":this.total});},500);        
+        setTimeout(function () {self.HTMLprogressbar.progressbar({"value":this.numero,"max":this.total});},1000);        
     }
     updatePointage() {
         this.HTMLpointage.text(this.points);
@@ -142,6 +143,7 @@ class Quiz {
             }
             setTimeout(function () {self.clickable = true;},1000); 
         } else {
+            this.pourcentage = Math.floor(100 * this.points / this.total);
             this.HTMLprogressbar.slideUp(2000);            
             callback();
         }

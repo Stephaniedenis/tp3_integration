@@ -138,9 +138,33 @@ function lancerQuiz() {
 }
 
 function lancerModal() {
-    $('#modal').addClass('show');
-    changeEtat('sommaire');
+    let div = `
+    <div class="alert alert-warning" role="alert">
+    Vous avez réussi!
+    <br>${quiz.pourcentage}%
+    </div>    
+    `;
+    if (quiz.pourcentage > 70) {
+        div = `
+        <div class="alert alert-info" role="alert">
+        Bravo! Bon travail!
+        <br>${quiz.pourcentage}%
+        </div>
+        `;
+    } else if (quiz.pourcentage < 60) {
+        div = `
+        <div class="alert alert-danger" role="alert">
+        Vous avez échoué! Meilleure chance la prochaine fois!
+        <br>${quiz.pourcentage}%
+        </div>
+        `;
+    }
+    $('.modal-body').html(div);
     // lancer modal
+    $('#modal').modal('show');
+    $('#modal').on('hidden.bs.modal', function (e) {
+        changeEtat('sommaire');
+    });
 }
 
 function age(naissance) {
