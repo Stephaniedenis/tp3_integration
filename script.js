@@ -208,10 +208,9 @@ function remplirSommaireAccordeon() {
             </div>
             `);
     }
-    $("#accordion").accordion();
-
-  
-
+    $( "#accordion" ).accordion({
+        heightStyle: "content"
+    });
 }
 function remplirSommaireDatatable(){
     for(i=0;i<quiz.total;i++){
