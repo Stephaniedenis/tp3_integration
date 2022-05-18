@@ -109,7 +109,7 @@ class Quiz {
         this.HTMLprogressbar.slideDown(1000);
     }
     updateProgressBar() {
-        setTimeout(function () {self.HTMLprogressbar.progressbar({"value":this.numero,"max":this.total});},1000);        
+        self.HTMLprogressbar.progressbar({"value":this.numero,"max":this.total});        
     }
     updatePointage() {
         this.HTMLpointage.text(this.points);
